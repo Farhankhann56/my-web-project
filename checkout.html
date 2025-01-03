@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="images/icon"
+    href="images/favicon.ico">
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .product-image {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="container">
+        <h1 class="text-3xl font-semibold mb-6">Checkout</h1>
+
+        <!-- Order Summary Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Order Summary</h2>
+            <div id="order-summary">
+                <!-- Dynamic items will be displayed here -->
+            </div>
+            <hr class="my-4">
+            <div class="flex justify-between">
+                <span class="font-semibold">Total:</span>
+                <span id="total-price" class="text-xl font-semibold">$0.00</span>
+            </div>
+        </div>
+
+        <!-- Shipping Information Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Shipping Information</h2>
+            <form id="shipping-form">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input type="text" id="name" class="border p-2 rounded" placeholder="Name" required>
+                    <input type="text" id="address" class="border p-2 rounded" placeholder="Address" required>
+                    <input type="text" id="phone" class="border p-2 rounded" placeholder="Phone Number" required>
+                    <input type="text" id="city" class="border p-2 rounded" placeholder="City" required>
+                    <input type="text" id="zip" class="border p-2 rounded" placeholder="Zip Code" required>
+                </div>
+                <button type="submit" class="mt-4 bg-blue-500 text-white p-2 rounded">Submit</button>
+            </form>
+        </div>
+
+        <!-- Payment Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Payment Options</h2>
+            <div>
+                <label>
+                    <input type="radio" name="payment-method" value="card" class="mr-2" onclick="showPaymentFields('card')">
+                    Credit/Debit Card
+                </label><br>
+                <label>
+                    <input type="radio" name="payment-method" value="paypal" class="mr-2" onclick="showPaymentFields('paypal')">
+                    PayPal
+                </label><br>
+                <label>
+                    <input type="radio" name="payment-method" value="cod" class="mr-2" onclick="showPaymentFields('cod')">
+                    Cash on Delivery
+                </label>
+            </div>
+
+            <div id="card-fields" class="mt-4 hidden">
+                <input type="text" id="card-number" class="border p-2 rounded w-full mb-2" placeholder="Card Number" required>
+                <input type="text" id="expiry-date" class="border p-2 rounded w-full mb-2" placeholder="Expiry Date (MM/YY)" required>
+                <input type="text" id="cvv" class="border p-2 rounded w-full mb-2" placeholder="CVV" required>
+            </div>
+
+            <div id="paypal-fields" class="mt-4 hidden">
+                <input type="email" id="paypal-email" class="border p-2 rounded w-full mb-2" placeholder="PayPal Email" required>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button class="bg-green-500 text-white p-4 rounded-lg w-full">Confirm Purchase</button>
+    </div>
+
+    <script>
+        const items = [
+            { name: 'Product 1', image: 'https://via.placeholder.com/50', price: 29.99, quantity: 2 },
+            { name: 'Product 2', image: 'https://via.placeholder.com/50', price: 19.99, quantity: 1 }
+        ];
+
+        // Dynamically create order summary
+        const orderSummary = document.getElementById('order-summary');
+        const totalPriceElement = document.getElementById('total-price');
+        let totalPrice = 0;
+
+        items.forEach(item => {
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('flex', 'justify-between', 'items-center', 'py-2', 'border-b');
+            itemDiv.innerHTML = `
+                <div class="flex items-center">
+                    <img src="${item.image}" alt="${item.name}" class="product-image mr-4">
+                    <span>${item.name}</span>
+                </div>
+                <span>${item.quantity} x $${item.price}</span>
+            `;
+            orderSummary.appendChild(itemDiv);
+            totalPrice += item.price * item.quantity;
+        });
+
+        // Update total price
+        totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+
+        // Payment Method Selection
+        function showPaymentFields(method) {
+            document.getElementById('card-fields').classList.add('hidden');
+            document.getElementById('paypal-fields').classList.add('hidden');
+
+            if (method === 'card') {
+                document.getElementById('card-fields').classList.remove('hidden');
+            } else if (method === 'paypal') {
+                document.getElementById('paypal-fields').classList.remove('hidden');
+            }
+        }
+
+        // Form validation on submit
+        document.getElementById('shipping-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+            const city = document.getElementById('city').value;
+            const zip = document.getElementById('zip').value;
+
+            if (!name || !address || !phone || !city || !zip) {
+                alert('All fields are required!');
+            } else {
+                alert('Shipping information submitted successfully!');
+            }
+        });
+    </script>
+</body>
+</html>

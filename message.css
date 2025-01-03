@@ -1,0 +1,267 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgba(240, 245, 235, 1);
+    
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+
+  }
+  
+  .search-bar input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .search-bar select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .search-bar button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .search-bar button:hover {
+    background-color: #0056b3;
+  }
+  
+  .header-links a {
+    margin-left: 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .header-links a:hover {
+    text-decoration: underline;
+  }
+  /*********************************/
+  .message-container {
+    width: 100%;
+    max-width: 500px;
+    margin:0 auto
+  }
+  
+  .message-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .message-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .message-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #444;
+  }
+  
+  .message-form input,
+  .message-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .message-form textarea {
+    resize: none;
+  }
+  
+  .send-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .send-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .message-form {
+      padding: 15px;
+    }
+  
+    .message-form h2 {
+      font-size: 1.2rem;
+    }
+  
+    .message-form input,
+    .message-form textarea {
+      font-size: 0.9rem;
+    }
+  
+    .send-btn {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .message-form {
+      padding: 10px;
+    }
+  
+    .message-form h2 {
+      font-size: 1rem;
+    }
+  
+    .message-form input,
+    .message-form textarea {
+      font-size: 0.8rem;
+    }
+  
+    .send-btn {
+      font-size: 0.8rem;
+    }
+  }
+  /******************************* footer ************************/
+  .footer-container {
+    display: block;
+    position: relative;
+    width: 100%;
+    background-color: rgba(229, 231, 235, 1);
+    color: #000000;
+    padding: 20px 15px;
+    margin-top: auto;
+    clear: both;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.footer-logo {
+    flex: 1 1 250px;
+}
+.footer-logo h2 {
+  font-size: 1.8rem;
+  color:black;
+}
+
+.footer-logo p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex: 2 1 500px;
+}
+/********footer-section*****/
+.footer-section {
+  min-width: 120px;
+}
+
+.footer-section h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #0c0101;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color:black;
+  font-size: 0.9rem;
+}
+
+.footer-section a:hover {
+  color: #555;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: black;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+}
+
+
+/* Footer Apps */
+.appstore-icon{
+  width: 100px;
+  height: 80px;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}

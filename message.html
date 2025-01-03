@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message to sellar</title>
+    <link rel="stylesheet" href="message.css">
+    <link rel="icon" type="images/icon"
+    href="images/favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+          <img src="https://static.vecteezy.com/system/resources/previews/024/653/472/non_2x/red-shopping-bag-free-png.png" alt="Brand Logo">
+          <span>Brand</span>
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search">
+          <select>
+            <option>All category</option>
+            <option>Automobiles</option>
+            <option>Clothes and wear</option>
+            <option>Home interiors</option>
+            <option>Computer and tech</option>
+            <option>Tools, equipments</option>
+            <option>Tools, equipments</option>
+            <option>Tools, equipments</option>
+    
+          </select>
+          <button>Search</button>
+        </div>
+        <div class="header-links">
+          <a href="user-profile.html">Profile</a>
+          <a href="message.html">Message</a>
+          <a href="product.html">Products</a>
+          <a href="cart.html">My cart</a>
+        </div>
+      </header>
+      <!----------------message contaainer---------------------->
+      <main class="message-container">
+        <section class="message-form">
+          <h2>Send a Message to the Seller</h2>
+          <form id="messageForm">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required></textarea>
+    
+            <button type="submit" class="send-btn">Send Message</button>
+          </form>
+        </section>
+      </main>
+
+      <!-------------------------footer------------------------------------->
+    <footer class="footer-container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h2>MyShop</h2>
+            <p>Your go-to platform for reliable suppliers worldwide.</p>
+          </div>
+      
+          <div class="footer-links">
+            <div class="footer-section">
+              <h4>About</h4>
+              <ul>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Mission</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Careers</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Partnership</h4>
+              <ul>
+                <li><a href="#">Become a Partner</a></li>
+                <li><a href="#">Supplier Portal</a></li>
+                <li><a href="#">Advertise</a></li>
+                <li><a href="#">Affiliate Program</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Information</h4>
+              <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>For Users</h4>
+              <ul>
+                <li><a href="#">User Guide</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Support</a></li>
+              </ul>
+            </div>
+          </div>
+      
+          <div class="footer-apps">
+            <h4>Get the App</h4>
+           <img src="https://e7.pngegg.com/pngimages/912/1019/png-clipart-app-store-google-play-apple-apple-text-logo.png" class="appstore-icon" alt="">
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 MyShop. All rights reserved.</p>
+        </div>
+      </footer>
+   <script>
+    document.getElementById('messageForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+      
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+      
+        if (name && email && message) {
+          alert(`Message sent successfully!\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`);
+          this.reset(); // Clear form after submission
+        } else {
+          alert('Please fill out all fields before submitting.');
+        }
+      });
+      
+   </script>
+</body>
+</html>

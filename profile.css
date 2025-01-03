@@ -1,0 +1,130 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: #6c63ff;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  /* Profile Form Section */
+  .profile-form, .saved-info {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .profile-form h2, .saved-info h2 {
+    color: #6c63ff;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  form label {
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  
+  form input, form select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  form input[type="file"] {
+    padding: 0;
+  }
+  
+  .save-btn {
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #6c63ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .save-btn:hover {
+    background-color: #574bcb;
+  }
+  
+  /* Saved Information Section */
+  .saved-info p {
+    margin-bottom: 10px;
+  }
+  
+  .saved-info strong {
+    color: #333;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .profile-form, .saved-info {
+      padding: 15px;
+    }
+  
+    form input, form select {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  
+    .save-btn {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.2rem;
+    }
+  
+    .profile-form h2, .saved-info h2 {
+      font-size: 1.1rem;
+    }
+  
+    form input, form select {
+      font-size: 0.8rem;
+      padding: 6px;
+    }
+  
+    .save-btn {
+      font-size: 0.8rem;
+      padding: 6px;
+    }
+  }
+  
